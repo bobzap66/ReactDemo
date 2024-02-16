@@ -1,22 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Mobiles from './Mobiles.js';
+import Employees from './Employee.js';
+import State_demo from './State_demo.js';
+import PropsDemo1 from './PropsDemo1.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Mobiles/>
+
+        <Employees/>
+        <State_demo props={"none"}/>
+        <PropsDemo1 name="Nick" city="Pittsburgh" age={39}/>
+
       </header>
     </div>
   );
