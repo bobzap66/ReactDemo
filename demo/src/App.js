@@ -1,23 +1,33 @@
-
+import React from 'react';
+import {BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import './App.css';
-import Mobiles from './Mobiles.js';
-import Employees from './Employee.js';
-import State_demo from './State_demo.js';
-import PropsDemo1 from './PropsDemo1.js';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+import Layout from './Layout';
+import NoPage from './NoPage';
+import NewIT from './NewIT';
+import Digital from './Digital';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Mobiles/>
-
-        <Employees/>
-        <State_demo props={"none"}/>
-        <PropsDemo1 name="Nick" city="Pittsburgh" age={39}/>
-
-      </header>
-    </div>
-  );
+function App (){
+    return(
+        <div>
+            <Router>
+                <Routes>
+                    <Route path='/' element={<Layout/>}>
+                        <Route index element={<Home/>}/>
+                        <Route path='about' element={<About/>}/>
+                        <Route path='about/newIt' element={<NewIT/>}/>
+                        <Route path='about/digital' element={<Digital/>}/>
+                        <Route path='contact' element={<Contact/>}/>
+                        <Route path="*" element={<NoPage/>}/>
+                    </Route>
+                        
+                </Routes>
+            </Router>
+            {/* <ControlledForm></ControlledForm> */}
+        </div>
+    );
 }
 
 export default App;
