@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ToDoList from "./ToDoList";
 
 const AddTask= (props) => {
@@ -8,11 +8,16 @@ const AddTask= (props) => {
          id: Math.random(),
           task:input
           
-        }        
+        }
+        console.log("addTodo method called on " + newTodo.task);        
         props.tasks.push(newTodo);
+        
 
     
         };
+        useEffect(() => {
+
+        },[])
     return (
         <>
         <input type="text" value = {input} onChange={(e) => setInput(e.target.value)}/>

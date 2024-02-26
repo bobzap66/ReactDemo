@@ -21,7 +21,7 @@ class App extends Component {
             console.log(this.state.tasks)
     
             console.log("Delete Task Called on ID: " + id)
-            this.render();
+
         },
     
         tasks: [
@@ -34,11 +34,6 @@ class App extends Component {
     ],
       };
     }
-
-    useEffect() {this.render()
-    }
-
-
   render() {
     return(
       <div>
